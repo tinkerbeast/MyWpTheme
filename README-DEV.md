@@ -1,0 +1,4 @@
+Dev notes for myWpTheme
+=======================
+
+

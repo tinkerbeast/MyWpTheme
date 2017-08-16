@@ -14,6 +14,7 @@ TODOs
     * Relative URI
 * Bower font-awesome
 * Navbar customisers
+    * Drowpdown colour
     * Searchbar, searchbar google
     * Social bar - RSS feeds etc
 * Fix archive oage

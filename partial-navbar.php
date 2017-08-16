@@ -25,18 +25,11 @@ function mywptheme_navbar_style_position() {
         return 'sticky-top';
     }
 }
-
 ?>
 
 <?php if (get_theme_mod('mywptheme_navbar_position', 'sticky') != 'none') : ?>
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse <?php echo mywptheme_navbar_style_position(); ?> mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark <?php echo mywptheme_navbar_style_position(); ?> mb-4">
 
-        <!-- Navigation bar left side -->
-
-        <!-- Mobile device collapsible button -->
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <!-- Display brand logo -->
         <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
             <!-- Display brand image -->
@@ -59,14 +52,18 @@ function mywptheme_navbar_style_position() {
             ?>
         </a>
 
-        <!-- Navigation bar right side -->
 
-        <div class="collapse navbar-collapse">
+        <!-- Mobile device collapsible button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible navbar -->
+        <div id="navbarNav" class="collapse navbar-collapse">
             <!-- Display page menu -->
             <?php
             if (has_nav_menu('top')) {
-                wp_nav_menu(array('theme_location' => 'top', 'container' => false, 'menu_class' => 'nav navbar-nav', 'fallback_cb' => '__return_false',
-                    'items_wrap' => '<ul id="%1$s" class="%2$s mr-auto">%3$s</ul>', 'depth' => 2, 'walker' => new bootstrap_4_walker_nav_menu()));
+                wp_nav_menu(array('theme_location' => 'top', 'container' => false, 'menu_class' => 'navbar-nav', 'fallback_cb' => '__return_false',
+                    'items_wrap' => '<ul id="%1$s" class="%2$s mr-auto">%3$s</ul>', 'depth' => 5, 'walker' => new bootstrap_4_walker_nav_menu()));
             } else {
                 // TODO: Active menu display
                 echo('<strong>Page menu is unsupported in this theme</strong>');
@@ -77,7 +74,7 @@ function mywptheme_navbar_style_position() {
             <?php
             if (has_nav_menu('social')) {
                 wp_nav_menu(array('theme_location' => 'social', 'container' => false, 'menu_class' => 'nav navbar-nav', 'fallback_cb' => '__return_false',
-                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'depth' => 2, 'walker' => new bootstrap_4_walker_nav_menu()));
+                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'depth' => 1, 'walker' => new bootstrap_4_walker_nav_menu()));
             }
             ?>
             <!-- Display search form -->

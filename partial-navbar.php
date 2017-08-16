@@ -64,8 +64,8 @@ function mywptheme_navbar_style_position() {
         <div class="collapse navbar-collapse">
             <!-- Display page menu -->
             <?php
-            if (has_nav_menu('navbar')) {
-                wp_nav_menu(array('theme_location' => 'navbar', 'container' => false, 'menu_class' => 'nav navbar-nav', 'fallback_cb' => '__return_false',
+            if (has_nav_menu('top')) {
+                wp_nav_menu(array('theme_location' => 'top', 'container' => false, 'menu_class' => 'nav navbar-nav', 'fallback_cb' => '__return_false',
                     'items_wrap' => '<ul id="%1$s" class="%2$s mr-auto">%3$s</ul>', 'depth' => 2, 'walker' => new bootstrap_4_walker_nav_menu()));
             } else {
                 // TODO: Active menu display

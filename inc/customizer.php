@@ -36,7 +36,7 @@ function mywptheme_customize_register($wp_customize) {
     ));
     $wp_customize->add_setting('mywptheme_important_links', array(
         'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'explore_links_sanitize'
+        'sanitize_callback' => 'mywptheme_links_sanitize'
     ));
     $wp_customize->add_control(new mywptheme_Important_Links($wp_customize, 'important_links', array(
         'section' => 'mywptheme_important_links',

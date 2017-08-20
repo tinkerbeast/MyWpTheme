@@ -10,10 +10,12 @@
  */
 ?>
 
-<footer  class="jumbotron">
+<footer  class="py-5 bg-dark">
+    <div class="container">
     <?php
     get_template_part('template-parts/footer/site', 'info');
     ?>
+    </div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

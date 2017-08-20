@@ -12,10 +12,11 @@
 <?php
 get_header();
 ?>
+
+<!-- This page is rendered from 404.php -->
 <div class="container">
     <div class="row">
-        <main id="main" role="main"  class="col-sm-12">
-            <h1>404.php</h1>
+        <main id="main" role="main"  class="col-sm-12">            
             <?php get_template_part('template-parts/post/content', 'none') ?>
         </main><!-- #main.col -->
     </div><!-- #primary -->

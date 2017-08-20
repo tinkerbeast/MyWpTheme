@@ -12,11 +12,11 @@
 <?php
 get_header();
 ?>
+
+<!-- This page is rendered from search.php -->
 <div class="container">
     <div class="row">
         <main id="main" role="main"  class="col-sm-12">
-            <h1>search.php</h1>
-
             <?php
             if (have_posts()) :
 

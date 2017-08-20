@@ -26,7 +26,7 @@ get_header();
                 <?php if (is_home() && !is_front_page()) : ?>                
                     <h2 class="h1"><?php single_post_title(); ?></h2>
                 <?php else : ?>                
-                    <h2 class="h1"><?php _e('Posts', 'twentyseventeen'); ?></h2>
+                    <h2 class="h1"><?php _e('Posts', 'mywptheme-en-us'); ?></h2>
                 <?php endif; ?>
             </header>
             <?php

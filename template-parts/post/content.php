@@ -9,19 +9,18 @@
  * @since MyWpTheme 0.0
  */
 ?>
-?>
+
 <article id="post-<?php the_ID(); ?>" class="card my-5">
 
     <?php if (!is_single()) : // TODO: Why avoid thumbnail for single? Because of permalink? ?> 
         <!-- Featured image -->
         <a href="<?php the_permalink(); ?>">
-        <?php mywptheme_posts_image_featured(null, '', '', false, 'card-img-top img-fluid', 'mywptheme-featured-col-one'); ?>
+            <?php mywptheme_posts_image_featured(null, '', '', false, 'card-img-top img-fluid', 'mywptheme-featured-col-one'); ?>
         </a>
     <?php endif; ?>
 
     <div class="card-body">
         <?php
-        // TODO: explore all cases and assign the rigth header values
         if (is_single()) { // accessessed from single.php
             the_title('<h2 class="card-title">', '</h2>');
         } else if (is_home()) { // accessessed from home.php or index.php
@@ -34,12 +33,12 @@
         <?php
         /* TODO: content */
         the_content(sprintf(
-                        __('Continue reading<span class="sr-only"> "%s"</span>', 'twentyseventeen'), get_the_title()
+                        __('Continue reading<span class="sr-only"> "%s"</span>', 'mywptheme-en-us'), get_the_title()
         ));
 
         /* TODO: link pages */
         wp_link_pages(array(
-            'before' => '<div class="page-links">' . __('Pages:', 'twentyseventeen'),
+            'before' => '<div class="page-links">' . __('Pages:', 'mywptheme-en-us'),
             'after' => '</div>',
             'link_before' => '<span class="page-number">',
             'link_after' => '</span>',
@@ -48,7 +47,7 @@
     </div>
 
     <footer class="card-footer">
-        <?php if (is_home() &&  is_sticky()) : ?>
+        <?php if (is_home() && is_sticky()) : ?>
             <!-- Sticky -->            
             <i class="fa fa-thumb-tack mr-3" aria-hidden="true" title="Sticky post"></i>
             <span class="sr-only">Sticky post</span>

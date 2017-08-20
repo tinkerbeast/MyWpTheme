@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom template tags for this theme
  *
@@ -8,7 +9,6 @@
  * @subpackage MyWpTheme
  * @since MyWpTheme 0.0
  */
-
 if (!function_exists('mywptheme_posts_link_author')) :
 
     function mywptheme_posts_link_author($text = 'by ', $before = '', $after = '', $id = false, $class = '') {
@@ -44,7 +44,7 @@ if (!function_exists('mywptheme_posts_link_category')) :
     function mywptheme_posts_link_category($text = null, $before = '', $after = '', $id = false, $class = '', $srtext = 'Categories') {
         $separate_meta = __(', ', 'mywptheme-en-us');
         $categories_list = get_the_category_list($separate_meta);
-        if ($categories_list && twentyseventeen_categorized_blog()) {
+        if ($categories_list) {
             echo __($text, 'mywptheme-en-us') . '<span class="sr-only">' . __($srtext, 'mywptheme-en-us') . '</span>' . $before . $categories_list . $after;
         }
     }
@@ -99,26 +99,33 @@ if (!function_exists('mywptheme_posts_pagination')) :
     // TODO: Write a more efficient, modular function
 
     function mywptheme_posts_pagination() {
-        echo('<nav aria-label="..."><ul class="pagination">');
+
         $prev_text = __('Previous page', 'mywptheme-en-us');
-        $next_text = __('Next page', 'mywptheme-en-us');
-        $pagination_current = intval(get_query_var('paged'));
+        $next_text = __('Next page', 'mywptheme-en-us');        
         $paginattion_links = paginate_links(array('type' => 'array',
             'prev_text' => '<i class="fa fa-backward" aria-hidden="true" title="' . $prev_text . '"></i><span class="sr-only">' . $prev_text . '</span>',
             'next_text' => '<i class="fa fa-forward" aria-hidden="true" title="' . $next_text . '"></i><span class="sr-only">' . $next_text . '</span>'));
-        foreach ($paginattion_links as $i => $pl) {
-            if ($i == $pagination_current) {
-                echo('<li class="page-item disabled">');
-                echo('<a class="page-link" href="#">' . ($i ? $i : 1) . '</a>');
-                echo('</li>');
-            } else {
-                echo('<li class="page-item">');
-                echo(str_replace("page-numbers", "page-link", $pl));
-                echo('</li>');
+        
+        if (!is_null($paginattion_links)) {
+            $pagination_current = intval(get_query_var('paged'));
+            
+            echo('<nav aria-label="..."><ul class="pagination">');
+            foreach ($paginattion_links as $i => $pl) {
+                if ($i == $pagination_current) {
+                    echo('<li class="page-item disabled">');
+                    echo('<a class="page-link" href="#">' . ($i ? $i : 1) . '</a>');
+                    echo('</li>');
+                } else {
+                    echo('<li class="page-item">');
+                    echo(str_replace("page-numbers", "page-link", $pl));
+                    echo('</li>');
+                }
             }
+            echo('</ul></nav>');
         }
-        echo('</ul></nav>');
     }
+
+
 
 
 

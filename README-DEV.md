@@ -4,7 +4,8 @@ Dev notes for myWpTheme
 TODOs
 ----------------------
 
-* Basic Commit function, header, index, footer
+~* Basic Commit function, header, index, footer
+* Advanced Commit archive, single, page, home, index
 
 * Add RSS feeds etc
 ~* Add bower font-awesome

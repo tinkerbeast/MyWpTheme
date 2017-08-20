@@ -19,7 +19,8 @@ TODOs
 * Customise the header and background colours from theme support
 * Customise navbar Searchbar
 
-* Fix blockquote in posts
+* Fix blockquote in posts, card
+* Fix image in posts, card
 * Fix social bar css 
 * Fix archive oage
 * Fix navbar placements

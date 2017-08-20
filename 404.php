@@ -17,7 +17,7 @@ get_header();
         <main id="main" role="main"  class="col-sm-12">
             <h1>404.php</h1>
             <?php get_template_part('template-parts/post/content', 'none') ?>
-        </main><!-- #main.col -->        
+        </main><!-- #main.col -->
     </div><!-- #primary -->
 </div><!-- .wrap -->
 <?php

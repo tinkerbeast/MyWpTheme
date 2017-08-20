@@ -33,7 +33,7 @@ function mywptheme_setup() {
     // Cropping the images to different sizes to be used in the theme
     add_image_size('mywptheme-featured-col-one', 1110, 262, true);
     add_image_size('mywptheme-featured-col-two', 833, 197, true);
-    add_image_size('mywptheme-featured-col-three', 555, 131, true);
+    add_image_size('mywptheme-featured-col-three', 555, 131, true);    
     add_image_size('mywptheme-thumnail', 200, 200, true);
     // Registering navigation menus.
     register_nav_menus(array(
@@ -83,7 +83,7 @@ add_action('after_setup_theme', 'mywptheme_setup');
 
 
 /** Load functions */
-require_once get_parent_theme_file_path('/inc/functions.php');
+//require_once get_parent_theme_file_path('/inc/functions.php');
 require_once get_parent_theme_file_path('/inc/customizer.php');
 require_once get_parent_theme_file_path('/inc/template-tags.php');
 // TODO: reintroduce these
@@ -93,7 +93,8 @@ require_once get_parent_theme_file_path('/inc/template-tags.php');
 
 /* Calling in the admin area for the Welcome Page */
 if (is_admin()) {
-    require get_parent_theme_file_path('/inc/admin/mywptheme-admin-class.php');
+    // TODO: make this happen
+    //require get_parent_theme_file_path('/inc/admin/mywptheme-admin-class.php');
 }
 
 

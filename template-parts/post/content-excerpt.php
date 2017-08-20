@@ -21,7 +21,7 @@
         if ('post' === get_post_type()) {
             ?>
             <p>
-                <i class="fa fa-calendar-o mr-1" aria-hidden="true"></i> <?php mywptheme_posts_link_datetime_published(' ', '', '', false, ''); ?>            
+                <i class="fa fa-calendar-o mr-1" aria-hidden="true"></i> <?php mywptheme_posts_link_datetime_published(' ', '', '', false, ''); ?>
                 <?php mywptheme_posts_link_edit('Edit', '<i class="fa fa-edit ml-2 mr-1" aria-hidden="true"></i> ', '', false, ''); ?>
             </p>
         <?php } ?>

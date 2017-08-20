@@ -31,9 +31,9 @@ function mywptheme_setup() {
     // This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
     add_theme_support('post-thumbnails');
     // Cropping the images to different sizes to be used in the theme
-    add_image_size('mywptheme-col-one', 1110, 262, true);
-    add_image_size('mywptheme-col-two', 833, 197, true);
-    add_image_size('mywptheme-col-three', 555, 131, true);
+    add_image_size('mywptheme-featured-col-one', 1110, 262, true);
+    add_image_size('mywptheme-featured-col-two', 833, 197, true);
+    add_image_size('mywptheme-featured-col-three', 555, 131, true);
     add_image_size('mywptheme-thumnail', 200, 200, true);
     // Registering navigation menus.
     register_nav_menus(array(
@@ -85,6 +85,7 @@ add_action('after_setup_theme', 'mywptheme_setup');
 /** Load functions */
 require_once get_parent_theme_file_path('/inc/functions.php');
 require_once get_parent_theme_file_path('/inc/customizer.php');
+require_once get_parent_theme_file_path('/inc/template-tags.php');
 // TODO: reintroduce these
 //require_once get_parent_theme_file_path( '/inc/admin/meta-boxes.php' );
 //require_once get_parent_theme_file_path( '/inc/widgets/widgets.php' );

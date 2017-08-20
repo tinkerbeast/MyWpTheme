@@ -58,7 +58,7 @@ function mywptheme_header_show() {
         if (display_header_text()) {
             $display_name = get_bloginfo('name', 'display');
             if ($display_name) {
-                echo('<h1 id="site-title" class="display-3">' . $display_name . '</h1>');
+                echo('<h1 id="site-title" class="display-2">' . $display_name . '</h1>');
             }
             $display_description = get_bloginfo('description', 'display');
             if ($display_description != '' || is_customize_preview()) {

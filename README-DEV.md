@@ -1,11 +1,26 @@
 Dev notes for myWpTheme
 =======================
 
-TODOs
-----------------------
+Current version
+---------------
 
-~* Basic Commit function, header, index, footer
-* Advanced Commit archive, single, page, home, index
+Reached prealpha-1: version 0.1
+
+Roadmap to next version
+-----------------------
+
+* Bower build for sass components
+* Modify custom css for better bootstrap integration
+* Keep css in proper files
+* Wordpress background and heading colour support integration
+* Post content image and blockquote support
+* Build and sanity and smoke tests
+
+Big list of TODOs and DONEs
+---------------------------
+
+~* Basic commit function, header, index, footer
+* Basic commit archive, single, page, home, index
 
 * Add RSS feeds etc
 ~* Add bower font-awesome
@@ -20,10 +35,11 @@ TODOs
 * Customise the header and background colours from theme support
 * Customise navbar Searchbar
 
-* Fix blockquote in posts, card
-* Fix image in posts, card
+* Must fix blockquote in posts, card
+* Must fix image in posts, card
+
 * Fix social bar css 
-* Fix archive oage
+* Fix archive page
 * Fix navbar placements
 * Fix dropdown bgcolor
 * Fix navbar dropdown colour
@@ -35,10 +51,11 @@ TODOs
 * Header text placement
 * searchbar google
 
-DOD
-----------------------
+DOD for alpha
+-------------
 
 * Basic
 * Add
 * Improve
+* Must fix
 

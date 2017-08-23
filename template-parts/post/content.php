@@ -10,7 +10,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="card my-5">
+<article id="post-<?php the_ID(); ?>" class="post wp-post card my-5"> <!-- #post is part of WordPress 1.5 site architecture -->
 
     <?php if (!is_single()) : // TODO: Why avoid thumbnail for single? Because of permalink? ?> 
         <!-- Featured image -->
@@ -28,17 +28,22 @@
         } else { // accessessed from archive.php
             the_title('<h3 class="card-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h3>');
         }
+        // TODO: <small>Date</small> for wp 1.5 site architecture
         ?>
-
+        
+        <div class="entry wp-entry">
         <?php
         /* TODO: content */
         the_content(sprintf(
                         __('Continue reading<span class="sr-only"> "%s"</span>', 'mywptheme-en-us'), get_the_title()
         ));
+        ?>
+        </div> <!-- .entry-->
 
+        <?php
         /* TODO: link pages */
         wp_link_pages(array(
-            'before' => '<div class="page-links">' . __('Pages:', 'mywptheme-en-us'),
+            'before' => '<div class="navigation wp-navigation page-links">' . __('Pages:', 'mywptheme-en-us'),
             'after' => '</div>',
             'link_before' => '<span class="page-number">',
             'link_after' => '</span>',
@@ -46,7 +51,7 @@
         ?>
     </div>
 
-    <footer class="card-footer">
+    <footer class="postmetadata wp-postmetadata card-footer">
         <?php if (is_home() && is_sticky()) : ?>
             <!-- Sticky -->            
             <i class="fa fa-thumb-tack mr-3" aria-hidden="true" title="Sticky post"></i>

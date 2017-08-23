@@ -9,7 +9,9 @@ Reached prealpha-1: version 0.1
 Roadmap to next version
 -----------------------
 
-* Bower build for sass components
+* Build for sass components
+* Use wp ids and classes in my theme
+* Move navbar into header
 * Modify custom css for better bootstrap integration
 * Keep css in proper files
 * Wordpress background and heading colour support integration
@@ -59,3 +61,9 @@ DOD for alpha
 * Improve
 * Must fix
 
+Bookmarks
+---------
+
+[Default WP page structure](https://codex.wordpress.org/Site_Architecture_1.5)
+[WP content loop](https://codex.wordpress.org/The_Loop)
+[See `Related` for list of content functions](https://codex.wordpress.org/Function_Reference/post_class)

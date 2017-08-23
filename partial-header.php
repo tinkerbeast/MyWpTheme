@@ -50,25 +50,27 @@ function mywptheme_header_show() {
 ?>
 
 <?php if (mywptheme_header_show() == 1) : ?>
-    <header id="site-header" class="jumbotron" style="<?php mywptheme_header_style_background();
-    mywptheme_header_style_height() ?>">        
+    <header id="header" class="jumbotron" style="<?php mywptheme_header_style_background();
+    mywptheme_header_style_height() ?>"> <!-- #header is part of WordPress 1.5 site architecture -->
+        <div id="headerimg"> <!-- #headerimg is part of WordPress 1.5 site architecture -->
         <!-- TODO: Widgets in header -->
         <!-- Display site heading and description -->        
         <?php
         if (display_header_text()) {
             $display_name = get_bloginfo('name', 'display');
             if ($display_name) {
-                echo('<h1 id="site-title" class="display-2">' . $display_name . '</h1>');
+                echo('<h1 class="display-2">' . $display_name . '</h1>');
             }
             $display_description = get_bloginfo('description', 'display');
             if ($display_description != '' || is_customize_preview()) {
-                echo('<p id="site-description" class="lead">' . $display_description . '</p>');
+                echo('<p class="description wp-description lead">' . $display_description . '</p>');
             }
         }
         ?>
         <!-- TODO: Special feature header widget dropdown -->
         <!-- TODO: Special feature slider -->
         <!-- TODO: Special feature header -->
+        </div>
     </header>
 <?php endif; ?>
 

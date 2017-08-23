@@ -10,7 +10,7 @@
  */
 ?>
 
-<footer  class="py-5 bg-dark">
+<footer id="footer" class="py-5 bg-dark"> <!-- #footer is part of WordPress 1.5 site architecture -->
     <div class="container">
     <?php
     get_template_part('template-parts/footer/site', 'info');
@@ -26,5 +26,6 @@
 
 <?php wp_footer(); ?>
 
+<div> <!-- #page -->
 </body>
 </html>

@@ -19,7 +19,7 @@ get_header();
 ?>
 
 <!-- This is rendered from index.php -->
-<div class="container">
+<div id="content" class="container"> <!-- #content is part of WordPress 1.5 site architecture -->
     <div class="row">
         <main id="main" role="main"  class="col-sm-12">            
             <header>

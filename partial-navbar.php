@@ -28,7 +28,7 @@ function mywptheme_navbar_style_position() {
 ?>
 
 <?php if (get_theme_mod('mywptheme_navbar_position', 'sticky') != 'none') : ?>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark <?php echo mywptheme_navbar_style_position(); ?> mb-4">
+    <nav id="menu" class="navbar navbar-expand-lg navbar-dark bg-dark <?php echo mywptheme_navbar_style_position(); ?> mb-4"> <!-- #menu is part of WordPress 1.5 site architecture -->
 
         <!-- Display brand logo -->
         <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">

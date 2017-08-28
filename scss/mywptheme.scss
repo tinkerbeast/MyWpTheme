@@ -1,1 +1,172 @@
+/**
+ * SASS stylesheet for this them.
+ * 1. Bootstrap include
+ * 2. Custom styles
+ * 3. WP specific styles
+ * 4. WP specific styles for content
+ */
+
 @import '../libweb/bootstrap/scss/bootstrap';
+
+/**
+ * RG: Custom styles 
+ */
+
+@for $i from 1 through 4 {
+    .dropdown-menu .dropdown-depth-#{$i} {
+        padding-left: 20px * ($i - 1);
+    }
+}
+
+@function mywptheme-invert-rgb($colour) {
+    $redcol: red($colour);
+    $grncol: green($colour);
+    $blucol: blue($colour);
+    @return change-color($colour, 255 - $redcol, 255 - $grncol, 255 - $blucol);
+}
+
+$masthead-header-color: mywptheme-invert-rgb($body-color);
+
+header.masthead {
+    @extend .jumbotron;
+    // jumbotron overwritten propertiees
+    border-radius: 0; 
+    margin-bottom: 0px;
+    background-color: mywptheme-invert-rgb($jumbotron-bg);
+
+    h1, p.lead {
+        color: $masthead-header-color;
+        //text-shadow: 0 0 6px lighten($masthead-header-color, 25%);
+    }
+}
+
+/**
+ * RG: WP specific styles
+ */
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.entry {
+    .alignnone {
+        // Nothing needed
+    }
+
+    .aligncenter,
+    div.aligncenter {
+        @extend .mx-auto;
+        @extend .d-block;
+    }
+
+    .alignright {
+        @extend .float-right;
+    }
+
+    .alignleft {
+        @extend .float-left;
+    }
+    
+    img.alignright {
+        @extend .m-3;
+    }
+    
+    img.alignleft {
+        @extend .m-3;
+    }
+
+    a img.alignright {
+        // No additiontal things needed
+    }
+
+    a img.alignnone {
+        // No additiontal things needed
+    }
+
+    a img.alignleft {
+        // No additiontal things needed
+    }
+
+    a img.aligncenter {
+        // No additiontal things needed
+    }
+
+    // TODO: When is wp-caption used?
+    /*
+    .wp-caption {
+        background: #fff;
+        border: 1px solid #f0f0f0;
+        max-width: 96%; 
+        padding: 5px 3px 10px;
+        text-align: center;
+    }
+
+    .wp-caption.alignnone {
+        margin: 5px 20px 20px 0;
+    }
+
+    .wp-caption.alignleft {
+        margin: 5px 20px 20px 0;
+    }
+
+    .wp-caption.alignright {
+        margin: 5px 0 20px 20px;
+    }
+
+    .wp-caption img {
+        border: 0 none;
+        height: auto;
+        margin: 0;
+        max-width: 98.5%;
+        padding: 0;
+        width: auto;
+    }
+
+    .wp-caption p.wp-caption-text {
+        font-size: 11px;
+        line-height: 17px;
+        margin: 0;
+        padding: 0 4px 5px;
+    }
+    */
+
+    .screen-reader-text {
+        @extend .sr-only;
+        @extend .sr-only-focusable;
+    }
+
+    // WordPress doesn't distinguish between focusable and non focusable screen reader text
+    //.screen-reader-text:focus { }
+}
+
+/**
+ * RG: WP specific styles for content
+ */
+
+.entry blockquote {
+    @extend .blockquote;
+}
+.entry blockquote > footer {
+    @extend .blockquote-footer;
+}
+
+.entry table {
+    @extend .table;
+    @extend .table-responsive;
+}
+
+.entry {
+    img {
+        @extend .img-fluid;        
+    }
+    img.size-thumbnail {
+        @extend .img-thumbnail;
+    }
+    img.size-medium {
+        @extend .rounded;
+    }
+    img.size-large {
+        @extend .rounded;
+    }
+    img.size-full {
+        @extend .rounded;
+    }
+}

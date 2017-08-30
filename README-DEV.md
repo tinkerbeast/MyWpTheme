@@ -9,13 +9,16 @@ Reached prealpha-1: version 0.1
 Roadmap to next version
 -----------------------
 
-* Build for sass components
-* Use wp ids and classes in my theme
+~* Build for sass components
+~* Use wp ids and classes in my theme
+* Assign proper roles to the elements
 * Move navbar into header
 * Modify custom css for better bootstrap integration
 * Keep css in proper files
+* Add code pretifier
 * Wordpress background and heading colour support integration
 * Post content image and blockquote support
+* Screen reader check
 * Build and sanity and smoke tests
 
 Big list of TODOs and DONEs
@@ -23,6 +26,7 @@ Big list of TODOs and DONEs
 
 ~* Basic commit function, header, index, footer
 * Basic commit archive, single, page, home, index
+* Basic use wp ids and classes for comments section in my theme
 
 * Add RSS feeds etc
 ~* Add bower font-awesome
@@ -52,6 +56,9 @@ Big list of TODOs and DONEs
 * Header video
 * Header text placement
 * searchbar google
+* RTL language support
+* google code prettify
+* responsive embed content
 
 DOD for alpha
 -------------

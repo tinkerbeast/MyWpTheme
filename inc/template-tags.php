@@ -11,37 +11,37 @@
  */
 if (!function_exists('mywptheme_posts_link_author')) :
 
-    function mywptheme_posts_link_author($text = 'by ', $before = '', $after = '', $id = false, $class = '') {
-        echo __($text, 'mywptheme-en-us') . '<a class="' . $class . '" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $id))) . '">' . $before . get_the_author() . $after . '</a>';
+    function mywptheme_posts_link_author($text = 'by ', $before = '', $after = '', $id = false, $class = '', $srtext = 'Author: ') {
+        echo __($text, 'mywptheme-en-us') . '<span class="sr-only">' . __($srtext, 'mywptheme-en-us') . '</span>' . '<a class="' . $class . '" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $id))) . '">' . $before . get_the_author() . $after . '</a>';
     }
 
 endif;
 
 if (!function_exists('mywptheme_posts_link_datetime_published')) :
 
-    function mywptheme_posts_link_datetime_published($text = 'Posted on ', $before = '', $after = '', $id = false, $class = '') {
+    function mywptheme_posts_link_datetime_published($text = 'Posted on ', $before = '', $after = '', $id = false, $class = '', $srtext = 'Published on: ') {
         // Warning: Id is not used just kept for a uniform function interface
         $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
         $time_string = sprintf($time_string, get_the_date(DATE_W3C), get_the_date());
-        echo __($text, 'mywptheme-en-us') . '<a class="' . $class . '" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $before . $time_string . $after . '</a>';
+        echo __($text, 'mywptheme-en-us') . '<span class="sr-only">' . __($srtext, 'mywptheme-en-us') . '</span>' . '<a class="' . $class . '" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $before . $time_string . $after . '</a>';
     }
 
 endif;
 
 if (!function_exists('mywptheme_posts_link_datetime_modified')) :
 
-    function mywptheme_posts_link_datetime_modified($text = 'Modified on ', $before = '', $after = '', $id = false, $class = '') {
+    function mywptheme_posts_link_datetime_modified($text = 'Modified on ', $before = '', $after = '', $id = false, $class = '', $srtext = 'Modified on: ') {
         // Warning: Id is not used just kept for a uniform function interface
         $time_string = '<time class="updated" datetime="%1$s">%2$s</time>';
         $time_string = sprintf($time_string, get_the_modified_date(DATE_W3C), get_the_modified_date());
-        echo __($text, 'mywptheme-en-us') . '<a class="' . $class . '" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $before . $time_string . $after . '</a>';
+        echo __($text, 'mywptheme-en-us') . '<span class="sr-only">' . __($srtext, 'mywptheme-en-us') . '</span>' . '<a class="' . $class . '" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $before . $time_string . $after . '</a>';
     }
 
 endif;
 
 if (!function_exists('mywptheme_posts_link_category')) :
 
-    function mywptheme_posts_link_category($text = null, $before = '', $after = '', $id = false, $class = '', $srtext = 'Categories') {
+    function mywptheme_posts_link_category($text = null, $before = '', $after = '', $id = false, $class = '', $srtext = 'Categories: ') {
         $separate_meta = __(', ', 'mywptheme-en-us');
         $categories_list = get_the_category_list($separate_meta);
         if ($categories_list) {
@@ -53,7 +53,7 @@ endif;
 
 if (!function_exists('mywptheme_posts_link_tag')) :
 
-    function mywptheme_posts_link_tag($text = null, $before = '', $after = '', $id = false, $class = '', $srtext = 'Tags') {
+    function mywptheme_posts_link_tag($text = null, $before = '', $after = '', $id = false, $class = '', $srtext = 'Tags: ') {
         $separate_meta = __(', ', 'mywptheme-en-us');
         $tags_list = get_the_tag_list('', $separate_meta);
         if ($tags_list) {
@@ -98,7 +98,7 @@ if (!function_exists('mywptheme_posts_pagination')) :
 
     // TODO: Write a more efficient, modular function
 
-    function mywptheme_posts_pagination() {
+    function mywptheme_posts_pagination($srtext = 'Browse pages: ') {
 
         $prev_text = __('Previous page', 'mywptheme-en-us');
         $next_text = __('Next page', 'mywptheme-en-us');        
@@ -109,7 +109,9 @@ if (!function_exists('mywptheme_posts_pagination')) :
         if (!is_null($paginattion_links)) {
             $pagination_current = intval(get_query_var('paged'));
             
-            echo('<nav aria-label="..."><ul class="pagination">');
+            echo('<nav aria-label="...">'
+                    . '<span class="sr-only">' . __($srtext, 'mywptheme-en-us') . '</span>'
+                    . '<ul class="pagination">');
             foreach ($paginattion_links as $i => $pl) {
                 if ($i == $pagination_current) {
                     echo('<li class="page-item disabled">');

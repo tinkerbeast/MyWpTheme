@@ -86,5 +86,6 @@
         <?php
         get_template_part('partial', 'navbar');
         ?>
+        <hr class="invisible">
         
 

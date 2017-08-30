@@ -39,6 +39,7 @@ get_header();
                      */
                     get_template_part('template-parts/post/content', get_post_format());
                 endwhile;
+                echo('<hr class="invisible">');
                 mywptheme_posts_pagination();
             else :
                 get_template_part('template-parts/post/content', 'none');

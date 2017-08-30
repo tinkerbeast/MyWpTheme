@@ -117,16 +117,18 @@ class bootstrap_4_walker_nav_menu extends Walker_Nav_menu {
     function start_lvl(&$output, $depth) { // ul
         $indent = str_repeat("\t", $depth); // indents the outputted HTML
         if ($depth == 0) {
-            $output .= "\n$indent<div class=\"dropdown-menu depth_$depth\">\n";
+            $output .= "\n$indent<ul class=\"dropdown-menu depth_$depth\">\n";
         } else {
-            $output .= "\n";
+            $output .= "\n$indent<ul class=\"list-unstyled\">\n";
         }
     }
 
     function end_lvl(&$output, $depth = 0, $args = array()) {
         $indent = str_repeat("\t", $depth);
         if ($depth == 0) {
-            $output .= "$indent</div>\n";
+            $output .= "$indent</ul>\n";
+        }  else {
+            $output .= "$indent</ul>\n";
         }
     }
 
@@ -152,6 +154,8 @@ class bootstrap_4_walker_nav_menu extends Walker_Nav_menu {
 
         if ($depth < 1) {
             $output .= $indent . '<li ' . $id . $value . $class_names . $li_attributes . '>';
+        } else {
+            $output .= $indent . '<li ' . $id . $value . $li_attributes . '>';
         }
 
         $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
@@ -179,11 +183,7 @@ class bootstrap_4_walker_nav_menu extends Walker_Nav_menu {
     }
     
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
-        if ($depth < 1) {
-            $output .= "</li>\n";
-        } else {
-            $output .= "\n";
-        }
+        $output .= "</li>\n";        
     }
 }
 

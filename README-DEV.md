@@ -11,14 +11,14 @@ Roadmap to next version
 
 ~* Build for sass components
 ~* Use wp ids and classes in my theme
-* Assign proper roles to the elements
-* Move navbar into header
+~* Move navbar into header - DROPPED: For page semantics - Added tarnsparent navbar in wishlist
 * Modify custom css for better bootstrap integration
 * Keep css in proper files
 * Add code pretifier
-* Wordpress background and heading colour support integration
-* Post content image and blockquote support
-* Screen reader check
+* Move files into correct folders
+~* Wordpress background and heading colour support integration - DROPPED: For incompatibilty with basic bootstrap concept - Added theme support in wishlist
+~* Post content image and blockquote support
+~* Screen reader check
 * Build and sanity and smoke tests
 
 Big list of TODOs and DONEs
@@ -27,6 +27,7 @@ Big list of TODOs and DONEs
 ~* Basic commit function, header, index, footer
 * Basic commit archive, single, page, home, index
 * Basic use wp ids and classes for comments section in my theme
+* Basic assign proper roles, aria to the elements
 
 * Add RSS feeds etc
 ~* Add bower font-awesome
@@ -52,6 +53,7 @@ Big list of TODOs and DONEs
 
 * Features - Are there inside the partials as TODOs
 
+* Theme support with colour pallettes
 * Woocommerce
 * Header video
 * Header text placement
@@ -59,6 +61,7 @@ Big list of TODOs and DONEs
 * RTL language support
 * google code prettify
 * responsive embed content
+* Transparent navbar with header background support
 
 DOD for alpha
 -------------

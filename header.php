@@ -81,10 +81,10 @@
     <body <?php body_class(); ?> style="background-color: #f2f2f2;">
     <div id="page"> <!-- Needed by WordPress 1.5 site architecture -->
         <?php
-        get_template_part('partial', 'header');
+        get_template_part('template-parts/header/masthead');
         ?>        
         <?php
-        get_template_part('partial', 'navbar');
+        get_template_part('template-parts/header/navbar');
         ?>
         <hr class="invisible">
         

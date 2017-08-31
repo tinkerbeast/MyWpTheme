@@ -73,8 +73,8 @@ function mywptheme_navbar_style_position() {
             <!-- Display social menu -->
             <?php
             if (has_nav_menu('social')) {
-                wp_nav_menu(array('theme_location' => 'social', 'container' => false, 'menu_class' => 'nav navbar-nav', 'fallback_cb' => '__return_false',
-                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'depth' => 1, 'walker' => new bootstrap_4_walker_nav_menu()));
+                wp_nav_menu(array('theme_location' => 'social', 'container' => false, 'menu_class' => 'social-nav nav navbar-nav mr-3', 'fallback_cb' => '__return_false',
+                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'depth' => 1, 'link_before' => '&#xf005;','walker' => new bootstrap_4_walker_nav_menu()));
             }
             ?>
             <!-- Display search form -->

@@ -50,9 +50,9 @@ function mywptheme_header_show() {
 ?>
 
 <?php if (mywptheme_header_show() == 1) : ?>
-    <header id="header" class="jumbotron masthead" style="<?php mywptheme_header_style_background();
-    mywptheme_header_style_height() ?>"> <!-- #header is part of WordPress 1.5 site architecture -->
-        <div id="headerimg"> <!-- #headerimg is part of WordPress 1.5 site architecture -->
+    <header id="header" > <!-- #header is part of WordPress 1.5 site architecture -->
+        <div id="headerimg" style="<?php mywptheme_header_style_background();
+                                   mywptheme_header_style_height() ?>"> <!-- #headerimg is part of WordPress 1.5 site architecture -->
         <!-- TODO: Widgets in header -->
         <!-- Display site heading and description -->        
         <?php

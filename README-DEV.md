@@ -12,10 +12,10 @@ Roadmap to next version
 ~* Build for sass components
 ~* Use wp ids and classes in my theme
 ~* Move navbar into header - DROPPED: For page semantics - Added tarnsparent navbar in wishlist
-* Modify custom css for better bootstrap integration
-* Keep css in proper files
+~* Modify custom css for better bootstrap integration - PARTIAL: Social nav with server code implemented - Alternate social nav with css in wishlist
+~* Keep css in proper files
 * Add code pretifier
-* Move files into correct folders
+~* Move files into correct folders
 ~* Wordpress background and heading colour support integration - DROPPED: For incompatibilty with basic bootstrap concept - Added theme support in wishlist
 ~* Post content image and blockquote support
 ~* Screen reader check
@@ -62,6 +62,7 @@ Big list of TODOs and DONEs
 * google code prettify
 * responsive embed content
 * Transparent navbar with header background support
+* Social nav with just css support
 
 DOD for alpha
 -------------

@@ -12,6 +12,10 @@
  * RG: Custom styles 
  */
 
+/**
+ * Style necessary to render multi level dropdowns in bootstrap.
+ * This class will be included by code generated from bootstrap_4_walker_nav_menu.
+ */
 @for $i from 1 through 4 {
     .dropdown-menu .dropdown-depth-#{$i} {
         padding-left: 20px * ($i - 1);
@@ -27,7 +31,7 @@
 
 $masthead-header-color: mywptheme-invert-rgb($body-color);
 
-header.masthead {
+#headerimg {
     @extend .jumbotron;
     // jumbotron overwritten propertiees
     border-radius: 0; 
@@ -39,6 +43,17 @@ header.masthead {
         //text-shadow: 0 0 6px lighten($masthead-header-color, 25%);
     }
 }
+
+.social-nav > li > a > i {
+                display: inline-block;
+                padding: 0 0 0 0;
+                font-family: FontAwesome;
+                font-size: 20px;
+                vertical-align: baseline;
+            }
+            .social-nav > li > a > span {
+                display: none;
+            }
 
 /**
  * RG: WP specific styles

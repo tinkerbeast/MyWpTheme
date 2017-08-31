@@ -45,15 +45,15 @@ $masthead-header-color: mywptheme-invert-rgb($body-color);
 }
 
 .social-nav > li > a > i {
-                display: inline-block;
-                padding: 0 0 0 0;
-                font-family: FontAwesome;
-                font-size: 20px;
-                vertical-align: baseline;
-            }
-            .social-nav > li > a > span {
-                display: none;
-            }
+    display: inline-block;
+    padding: 0 0 0 0;
+    font-family: FontAwesome;
+    font-size: 20px;
+    vertical-align: baseline;
+}
+.social-nav > li > a > span {
+    display: none;
+}
 
 /**
  * RG: WP specific styles
@@ -79,11 +79,11 @@ $masthead-header-color: mywptheme-invert-rgb($body-color);
     .alignleft {
         @extend .float-left;
     }
-    
+
     img.alignright {
         @extend .m-3;
     }
-    
+
     img.alignleft {
         @extend .m-3;
     }
@@ -166,6 +166,22 @@ $masthead-header-color: mywptheme-invert-rgb($body-color);
 .entry table {
     @extend .table;
     @extend .table-responsive;
+}
+
+.entry pre {
+    @extend .bg-light;
+    @extend .border;    
+    @extend .p-3;
+}
+
+.entry .full-width {
+    @extend .text-center;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 .entry {

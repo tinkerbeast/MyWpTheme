@@ -14,7 +14,7 @@ Roadmap to next version
 ~* Move navbar into header - DROPPED: For page semantics - Added tarnsparent navbar in wishlist
 ~* Modify custom css for better bootstrap integration - PARTIAL: Social nav with server code implemented - Alternate social nav with css in wishlist
 ~* Keep css in proper files
-* Add code pretifier
+~* Add code pretifier - DROPPED: Unnecssary - Exists https://wordpress.org/plugins/code-prettify/
 ~* Move files into correct folders
 ~* Wordpress background and heading colour support integration - DROPPED: For incompatibilty with basic bootstrap concept - Added theme support in wishlist
 ~* Post content image and blockquote support
